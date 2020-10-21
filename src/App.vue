@@ -1,14 +1,14 @@
 <template>
-  <mainLayout></mainLayout>
+  <MainLayout></MainLayout>
 </template>
 
 <script>
-import mainLayout from './views/main'
+import MainLayout from './views/Main'
 
 export default {
   name: 'App',
   components: {
-    mainLayout
+    MainLayout
   }
 }
 </script>
