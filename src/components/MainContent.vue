@@ -1,11 +1,20 @@
 <template>
   <div class="content">
-    the content
+    <div class="content-section">
+      <div class="content-section__title">
+        <h2>My featured projects</h2>
+      </div>
+
+      <Projects/>
+    </div>
   </div>
 </template>
 
 <script>
+  import Projects from '@/components/Projects'
+
   export default {
-    name: "MainContent"
+    name: "MainContent",
+    components: {Projects}
   }
 </script>
