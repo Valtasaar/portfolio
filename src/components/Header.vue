@@ -1,14 +1,17 @@
 <template>
   <header class="header">
-    <div class="header__menu-toggler">
-      <button class="hamburger hamburger--spring" @click="this.isMenuOpen = !isMenuOpen">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-      </button>
-    </div>
+    <div class="header__wrap">
+      <div class="header__menu-toggler">
+        <button class="hamburger hamburger--spring" :class="{'is-active': isMenuOpen}"
+                @click="this.isMenuOpen = !isMenuOpen">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+        </button>
+      </div>
 
-    <Menu v-model="isMenuOpen"/>
+      <Menu v-model="isMenuOpen"/>
+    </div>
   </header>
 </template>
 

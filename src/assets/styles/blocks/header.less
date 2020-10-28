@@ -1,14 +1,22 @@
 .header {
-    height: 56px;
+    width: 100%;
+    height: @headerWidth;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
     flex-shrink: 0;
-    position: relative;
+    position: fixed;
     padding: 0 12px;
     background-color: @black;
+    z-index: 10;
 
     &__menu-toggler {
         z-index: 6;
+    }
+
+    &__wrap {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
     }
 }
