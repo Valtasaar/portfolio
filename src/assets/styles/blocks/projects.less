@@ -83,6 +83,7 @@
         transform: translate(-50%, 0);
         z-index: 10;
         opacity: 0;
+        pointer-events: none;
         transition: transform .3s ease, opacity .3s ease;
 
         .button {
@@ -110,6 +111,7 @@
 
             &__buttons {
                 opacity: 1;
+                pointer-events: auto;
                 transform: translate(-50%, -50%);
             }
         }

@@ -1,0 +1,53 @@
+.circle-chart {
+    display: flex;
+    color: @white;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__chart {
+        position: relative;
+    }
+
+    &__circle {
+        stroke: @yellow;
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+
+    &__background {
+        stroke: @blue;
+    }
+
+    &__percent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: @bold;
+        color: @yellow;
+        font-size: 46px;
+    }
+
+    &__title {
+        font-size: 24px;
+        color: @yellow;
+        margin-top: 8px;
+    }
+}
+
+@media @small {
+    .circle-chart {
+        margin: 0 10px 30px;
+    }
+}
+
+@media @large {
+    .circle-chart {
+        margin: 0 0 30px;
+    }
+}

@@ -13,7 +13,7 @@
   import MainContent from '@/components/MainContent'
 
   export default {
-    name: "main",
+    name: "Main",
     components: {
       Header,
       MainContent

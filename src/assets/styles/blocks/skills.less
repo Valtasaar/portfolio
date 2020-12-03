@@ -1,0 +1,108 @@
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+
+    &__charts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+
+        i {
+            font-size: 60px;
+            color: @yellow;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: @bold;
+        color: @yellow;
+        margin-bottom: 6px;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        color: @white;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media @small {
+    .skills {
+        &__charts {
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media @medium {
+    .skills {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .skill {
+        width: 50%;
+        padding: 0 10px;
+    }
+}
+
+@media @large {
+    .skills-container {
+        flex-direction: row;
+    }
+
+    .skills {
+        order: 1;
+
+        &__charts {
+            margin-right: 20px;
+        }
+    }
+
+    .skill {
+        padding: 0 20px;
+    }
+}
+
+@media @xlarge {
+    .skills {
+        &__charts {
+            margin-right: 40px;
+        }
+    }
+}
+
+@media @xxlarge {
+    .skills {
+        &__charts {
+            margin-right: 80px;
+        }
+    }
+
+    .skill {
+        padding: 0 40px;
+    }
+}
