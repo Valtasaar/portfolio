@@ -17,8 +17,8 @@
     </div>
 
     <div class="project__buttons">
-      <Button transparent small>Visit site</Button>
-      <Button transparent small link href="https://github.com">Open github</Button>
+      <Button transparent yellowBorder small>Visit site</Button>
+      <Button transparent yellowBorder small link href="https://github.com">Open github</Button>
     </div>
   </div>
 </template>

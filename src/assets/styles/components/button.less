@@ -1,4 +1,5 @@
 .button {
+    min-width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,19 +23,42 @@
     }
 
     &--small {
-        min-width: 80px;
         height: 34px;
         padding: 0 14px;
     }
 
+    &--medium {
+        height: 46px;
+        padding: 0 20px;
+    }
+
     &--transparent {
-        box-shadow: inset 0 0 0 2px @yellow;
         background-color: transparent;
+    }
+
+    &--yellow-border {
+        box-shadow: inset 0 0 0 2px @yellow;
         color: @yellow;
 
         &:hover {
-            box-shadow: inset 0 0 0 2px darken(@yellow, 20%);
-            color: darken(@yellow, 20%);
+            box-shadow: inset 0 0 0 2px darken(@yellow, 10%);
+            color: darken(@yellow, 10%);
         }
+    }
+
+    &--white-border {
+        box-shadow: inset 0 0 0 2px @white;
+        color: @white;
+
+        &:hover {
+            box-shadow: inset 0 0 0 2px darken(@white, 10%);
+            color: darken(@white, 10%);
+        }
+    }
+
+    &--form {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 30px;
     }
 }

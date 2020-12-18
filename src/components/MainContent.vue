@@ -19,15 +19,44 @@
         <Skills/>
       </div>
     </div>
+
+    <div class="content-section content-section--two-cols">
+      <div class="content-section__wrap">
+        <div class="content-section__col">
+          <div class="content-section__title">
+            <h2>Contact with me</h2>
+
+            <div class="content-section__subtitle">
+              <h3>If you have any question or proposals, please fill the form.</h3>
+            </div>
+          </div>
+
+          <div class="content-section__text">
+            <span>Also, you can find me on social:</span>
+
+            <ul>
+              <li><a class="link link--white" href="#" title="fb">Facebook</a></li>
+              <li><a class="link link--white" href="#" title="tw">Twitter</a></li>
+              <li><a class="link link--white" href="#" title="vk">VK</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-section__col">
+          <ContactForm/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import Projects from '@/components/Projects'
   import Skills from '@/components/Skills'
+  import ContactForm from '@/components/ContactForm'
 
   export default {
     name: "MainContent",
-    components: {Projects, Skills}
+    components: {Projects, Skills, ContactForm}
   }
 </script>
