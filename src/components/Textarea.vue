@@ -1,10 +1,15 @@
 <template>
   <div class="field-block">
     <label :for="id" v-if="title">{{ title }}</label>
+
     <textarea class="textarea"
               :id="id"
+              :name="name"
               :placeholder="placeholder"
+              @input="$emit('update', $event.target.value)"
     ></textarea>
+
+    <span class="error">{{ error }}</span>
   </div>
 </template>
 
@@ -13,7 +18,9 @@
     name: "Textarea",
     props: {
       title: String,
-      placeholder: String
+      placeholder: String,
+      error: String,
+      name: String
     },
     data() {
       return {

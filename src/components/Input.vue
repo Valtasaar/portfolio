@@ -9,6 +9,7 @@
            :placeholder="placeholder"
            @input="$emit('update', $event.target.value)"
     >
+    <span class="error">{{ error }}</span>
   </div>
 </template>
 
@@ -23,7 +24,8 @@
       },
       title: String,
       placeholder: String,
-      name: String
+      name: String,
+      error: String
     },
     data() {
       return {

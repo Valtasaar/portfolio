@@ -1,5 +1,6 @@
 <template>
   <button class="button"
+          :disabled="disabled"
           :class="{
             'button--transparent': transparent,
             'button--small': small,
@@ -25,7 +26,8 @@
       medium: Boolean,
       yellowBorder: Boolean,
       whiteBorder: Boolean,
-      form: Boolean
+      form: Boolean,
+      disabled: Boolean
     }
   }
 </script>
