@@ -29,8 +29,12 @@
             @click.prevent="submit"
     >Send</Button>
 
-    <div class="form__error" v-if="isError">
+    <div class="form__info form__info--error" v-if="isError">
       <span>Something went wrong! Please check all fields</span>
+    </div>
+
+    <div class="form__info form__info--success" v-if="isSuccess">
+      <span>Your message has been sent!</span>
     </div>
   </div>
 </template>
@@ -40,7 +44,7 @@
   import Textarea from '@/components/Textarea'
   import Button from '@/components/Button'
   import { required, email } from '@vuelidate/validators'
-  import nodemailer from 'nodemailer'
+  import axios from 'axios'
 
   export default {
     name: "ContactForm",
@@ -54,7 +58,8 @@
           name: '',
           email: '',
           text: ''
-        }
+        },
+        isSuccess: false
       }
     },
     methods: {
@@ -67,6 +72,7 @@
         } else {
           this.errors.name = ''
         }
+        this.isSuccess = false
       },
       emailUpdate(value) {
         this.email = value
@@ -77,6 +83,7 @@
         } else {
           this.errors.email = ''
         }
+        this.isSuccess = false
       },
       textUpdate(value) {
         this.text = value
@@ -87,6 +94,7 @@
         } else {
           this.errors.text = ''
         }
+        this.isSuccess = false
       },
       submit() {
         this.nameUpdate(this.name)
@@ -97,20 +105,15 @@
           this.sendForm()
         }
       },
-      sendForm() {
-        console.log('send');
-
-        let transporter = nodemailer.createTransport({
-          host: "mail.hostland.ru",
-          port: 465,
-          secure: true,
-          auth: {
-            user: "info@daniweb.ru",
-            pass: "Ejv7npuFSq"
-          }
-        });
-
-        console.log(transporter);
+      async sendForm() {
+        axios.post('http://localhost:5000/mail', {name: this.name, email: this.email, text: this.text })
+          .then(() => {
+            this.isSuccess = true
+          })
+          .catch(function (error) {
+            console.error(error);
+            this.isSuccess = false
+        })
       }
     },
     computed: {

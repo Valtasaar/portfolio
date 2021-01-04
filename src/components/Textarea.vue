@@ -16,6 +16,7 @@
 <script>
   export default {
     name: "Textarea",
+    emits: ['update'],
     props: {
       title: String,
       placeholder: String,
