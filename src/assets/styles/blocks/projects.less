@@ -12,8 +12,10 @@
     margin-bottom: 20px;
     overflow: hidden;
     animation-duration: .5s;
+    opacity: 0;
+    transform: translateY(20px);
     will-change: transform;
-    transition: transform .3s ease;
+    transition: transform .3s ease, opacity .3s ease;
 
     &::before {
         content: '';
@@ -94,6 +96,11 @@
                 margin-top: 8px;
             }
         }
+    }
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     &.is-active {

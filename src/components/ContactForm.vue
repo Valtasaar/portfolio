@@ -5,6 +5,7 @@
            title="Name"
            placeholder="Enter your name"
            :error="errors.name"
+           :disabled="isLoading"
     />
 
     <Input @update="emailUpdate"
@@ -12,6 +13,7 @@
            type="email"
            placeholder="Enter your email"
            :error="errors.email"
+           :disabled="isLoading"
     />
 
     <Textarea @update="textUpdate"
@@ -19,18 +21,23 @@
               name="text"
               placeholder="Enter text"
               :error="errors.text"
+              :disabled="isLoading"
     />
 
     <Button transparent
             whiteBorder
             medium
             form
-            :disabled="isError"
+            :disabled="isError || isLoading"
             @click.prevent="submit"
     >Send</Button>
 
     <div class="form__info form__info--error" v-if="isError">
       <span>Something went wrong! Please check all fields</span>
+    </div>
+
+    <div class="form__info form__info--error" v-if="isFailed">
+      <span>{{ failedText }}</span>
     </div>
 
     <div class="form__info form__info--success" v-if="isSuccess">
@@ -59,7 +66,10 @@
           email: '',
           text: ''
         },
-        isSuccess: false
+        isSuccess: false,
+        isFailed: false,
+        isLoading: false,
+        failedText: ''
       }
     },
     methods: {
@@ -72,7 +82,9 @@
         } else {
           this.errors.name = ''
         }
+
         this.isSuccess = false
+        this.isFailed = false
       },
       emailUpdate(value) {
         this.email = value
@@ -83,7 +95,9 @@
         } else {
           this.errors.email = ''
         }
+
         this.isSuccess = false
+        this.isFailed = false
       },
       textUpdate(value) {
         this.text = value
@@ -94,7 +108,9 @@
         } else {
           this.errors.text = ''
         }
+
         this.isSuccess = false
+        this.isFailed = false
       },
       submit() {
         this.nameUpdate(this.name)
@@ -106,14 +122,22 @@
         }
       },
       async sendForm() {
-        axios.post('http://localhost:5000/mail', {name: this.name, email: this.email, text: this.text })
+        this.isLoading = true
+
+        axios.post('http://localhost:5000/mail', {name: this.name, email: this.email, text: this.text})
           .then(() => {
             this.isSuccess = true
+            this.isFailed = false
           })
-          .catch(function (error) {
+          .catch(error => {
             console.error(error);
+            this.failedText = error.message
             this.isSuccess = false
-        })
+            this.isFailed = true
+          })
+          .finally(() => {
+            this.isLoading = false
+          })
       }
     },
     computed: {

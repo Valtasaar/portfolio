@@ -1,6 +1,7 @@
 <template>
   <div class="project"
-       :class="{'is-active': isActive}"
+       :class="{'is-active': isActive, 'is-visible': isVisible}"
+       :id="id"
        @mouseenter.prevent="isActive = true"
        @mouseleave.prevent="isActive = false"
   >
@@ -25,14 +26,37 @@
 
 <script>
   import Button from '@/components/Button'
+  import ScrollMagic from 'scrollmagic'
 
   export default {
     name: "Project",
     components: {Button},
     data() {
       return {
-        isActive: false
+        isActive: false,
+        isVisible: false,
+        id: 'project-' + this.$.uid
       }
     },
+    mounted() {
+      if ( document.getElementById(this.id) ) {
+        const controller = new ScrollMagic.Controller();
+
+        const projectScene = new ScrollMagic.Scene({
+          triggerElement: document.getElementById(this.id)
+        })
+          .triggerHook(1)
+          .offset(50)
+          .addTo(controller)
+
+        projectScene.on("enter", () => {
+          this.isVisible = true
+        });
+
+        projectScene.on("leave", () => {
+          this.isVisible = false
+        });
+      }
+    }
   }
 </script>

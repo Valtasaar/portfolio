@@ -6,6 +6,7 @@
               :id="id"
               :name="name"
               :placeholder="placeholder"
+              :disabled="disabled"
               @input="$emit('update', $event.target.value)"
     ></textarea>
 
@@ -21,7 +22,8 @@
       title: String,
       placeholder: String,
       error: String,
-      name: String
+      name: String,
+      disabled: Boolean
     },
     data() {
       return {

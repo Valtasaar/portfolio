@@ -1,5 +1,5 @@
 <template>
-  <div class="circle-chart">
+  <div class="circle-chart" :id="id">
     <div class="circle-chart__wrap">
       <div class="circle-chart__chart">
         <svg :viewbox="`0 0 ${size} ${size}`"
@@ -24,7 +24,7 @@
           </circle>
         </svg>
 
-        <span class="circle-chart__percent">{{ value }}%</span>
+        <span class="circle-chart__percent">{{ count.toFixed(0) }}%</span>
       </div>
 
       <span class="circle-chart__title">{{ title }}</span>
@@ -33,6 +33,9 @@
 </template>
 
 <script>
+  import gsap from 'gsap'
+  import ScrollMagic from 'scrollmagic'
+
   export default {
     name: "CircleDiagram",
     props: {
@@ -44,6 +47,8 @@
     },
     data() {
       return {
+        count: 0,
+        id: 'chart-' + this.$.uid
       }
     },
     computed: {
@@ -51,7 +56,7 @@
         return this.size / 2
       },
       percent() {
-        return this.value / 100 * this.circumference
+        return this.count / 100 * this.circumference
       },
       wrapSize() {
         return (this.size / 2) + (this.width / 2)
@@ -64,6 +69,27 @@
       },
       circumference () {
         return 2 * Math.PI * (this.size / 2);
+      }
+    },
+    mounted() {
+      if ( document.getElementById(this.id) ) {
+        const controller = new ScrollMagic.Controller();
+
+        const chartScene = new ScrollMagic.Scene({
+          triggerElement: document.getElementById(this.id)
+        })
+          .setClassToggle(document.getElementById(this.id), "is-visible")
+          .triggerHook(1)
+          .offset(50)
+          .addTo(controller)
+
+        chartScene.on("enter", () => {
+          gsap.to(this.$data, { duration: 0.8, count: this.value })
+        });
+
+        chartScene.on("leave", () => {
+          gsap.to(this.$data, { duration: 0.8, count: 0 })
+        });
       }
     }
   }

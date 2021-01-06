@@ -3,6 +3,18 @@
     <div class="content-section">
       <div class="content-section__wrap">
         <div class="content-section__title">
+          <h2>Introduction</h2>
+        </div>
+
+        <div class="content-section__text">
+          Hi there!
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="content-section__wrap">
+        <div class="content-section__title">
           <h2>My featured projects</h2>
         </div>
 
@@ -20,7 +32,7 @@
       </div>
     </div>
 
-    <div class="content-section content-section--two-cols">
+    <div id="form-section" class="content-section content-section--two-cols content-section--form">
       <div class="content-section__wrap">
         <div class="content-section__col">
           <div class="content-section__title">
@@ -54,9 +66,23 @@
   import Projects from '@/components/Projects'
   import Skills from '@/components/Skills'
   import ContactForm from '@/components/ContactForm'
+  import ScrollMagic from 'scrollmagic'
 
   export default {
     name: "MainContent",
-    components: {Projects, Skills, ContactForm}
+    components: {Projects, Skills, ContactForm},
+    mounted() {
+      if ( document.getElementById('form-section') ) {
+        const controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+          triggerElement: document.getElementById('form-section')
+        })
+          .setClassToggle(document.getElementById('form-section'), "is-visible")
+          .triggerHook(1)
+          .offset(200)
+          .addTo(controller)
+      }
+    }
   }
 </script>

@@ -7,6 +7,7 @@
            :name="name"
            :type="type"
            :placeholder="placeholder"
+           :disabled="disabled"
            @input="$emit('update', $event.target.value)"
     >
     <span class="error">{{ error }}</span>
@@ -25,7 +26,8 @@
       title: String,
       placeholder: String,
       name: String,
-      error: String
+      error: String,
+      disabled: Boolean
     },
     data() {
       return {

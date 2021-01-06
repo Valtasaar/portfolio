@@ -3,6 +3,8 @@
     color: @white;
     text-align: center;
     margin-bottom: 30px;
+    opacity: 0;
+    transition: opacity .5s ease;
 
     &__wrap {
         display: flex;
@@ -37,6 +39,10 @@
         font-size: 24px;
         color: @yellow;
         margin-top: 8px;
+    }
+
+    &.is-visible {
+        opacity: 1;
     }
 }
 
