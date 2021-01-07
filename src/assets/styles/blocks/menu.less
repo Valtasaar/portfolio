@@ -11,54 +11,9 @@
     padding-left: 42px;
     padding-bottom: 42px;
     transform: translateX(-100%);
-    background-color: @yellow;
+    background-color: @black;
     transition: transform .3s ease;
     z-index: 5;
-
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        li {
-            margin-bottom: 10px;
-
-            a {
-                font-size: 30px;
-                font-weight: 600;
-                text-decoration: none;
-                background: linear-gradient(to right, @orange, @orange 50%, @white 50%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-size: 200% 100%;
-                background-position: 100%;
-                transition: background-position .3s ease;
-
-                &:hover,
-                &.is-active{
-                    background-position: 0 100%;
-                }
-            }
-        }
-    }
-
-    &__social {
-        i {
-            font-size: 28px;
-            color: @white;
-            transition: color .3s ease;
-        }
-
-        span {
-            margin-right: 20px;
-        }
-
-        a:hover {
-            i {
-                color: @orange;
-            }
-        }
-    }
 
     &.is-active {
         transform: translateX(0);
@@ -68,5 +23,11 @@
 @media @small {
     .menu {
         max-width: 320px;
+    }
+}
+
+@media @xlarge {
+    .menu {
+        display: none;
     }
 }

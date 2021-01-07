@@ -3,19 +3,7 @@
     <div class="content-section">
       <div class="content-section__wrap">
         <div class="content-section__title">
-          <h2>Introduction</h2>
-        </div>
-
-        <div class="content-section__text">
-          Hi there!
-        </div>
-      </div>
-    </div>
-
-    <div class="content-section">
-      <div class="content-section__wrap">
-        <div class="content-section__title">
-          <h2>My featured projects</h2>
+          <h2>Some of my non-confidential projects</h2>
         </div>
 
         <Projects/>
@@ -26,6 +14,10 @@
       <div class="content-section__wrap">
         <div class="content-section__title">
           <h2>Skills & Experience</h2>
+
+          <div class="content-section__subtitle">
+            <h3>Facts only :-)</h3>
+          </div>
         </div>
 
         <Skills/>

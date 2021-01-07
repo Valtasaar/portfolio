@@ -1,0 +1,47 @@
+.main-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 15px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 40px 0 0;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+
+            span:first-child {
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: @yellow;
+            }
+
+            span:last-child {
+                font-size: 16px;
+                color: @white;
+                margin-top: 6px;
+                font-weight: @bold;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    &--header {
+        display: none;
+    }
+}
+
+@media @xlarge {
+    .main-info {
+        &--header {
+            display: flex;
+        }
+    }
+}

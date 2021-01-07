@@ -6,20 +6,27 @@
        @mouseleave.prevent="isActive = false"
   >
     <div class="project__image">
-      <img src="/images/projects/Screenshot_1.png" alt="google">
+      <img :src="data.img" alt="google">
     </div>
 
-    <div class="project__title"><span>Google search</span></div>
+    <div class="project__title"><span>{{ data.title }}</span></div>
 
     <div class="project__tags">
-      <span>React</span>
-      <span>Vue</span>
-      <span>Tag</span>
+      <span v-for="(tag, i) in data.tags" :key="i">{{ tag }}</span>
     </div>
 
     <div class="project__buttons">
-      <Button transparent yellowBorder small>Visit site</Button>
-      <Button transparent yellowBorder small link href="https://github.com">Open github</Button>
+      <Button transparent yellowBorder small link :href="data.link">Visit site</Button>
+
+      <Button v-if="data.git"
+          transparent
+          yellowBorder
+          small
+          link
+          :href="data.git"
+      >
+        Open github
+      </Button>
     </div>
   </div>
 </template>
@@ -31,6 +38,9 @@
   export default {
     name: "Project",
     components: {Button},
+    props: {
+      data: Object
+    },
     data() {
       return {
         isActive: false,

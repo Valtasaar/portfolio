@@ -12,30 +12,7 @@
         </button>
       </div>
 
-      <div class="header__user-info">
-        <ul>
-          <li>
-            <span>My name</span>
-            <span>User Name</span>
-          </li>
-
-          <li>
-            <span>Role</span>
-            <span>WEB Developer</span>
-          </li>
-
-          <li>
-            <span>Email</span>
-            <span>daniil.kirien@gmail.com</span>
-          </li>
-        </ul>
-
-        <div class="header__social">
-          <span><a href="#" title="vkontakte"><i class="fab fa-vk"></i></a></span>
-          <span><a href="#" title="facebook"><i class="fab fa-facebook-square"></i></a></span>
-          <span><a href="#" title="twitter"><i class="fab fa-twitter-square"></i></a></span>
-        </div>
-      </div>
+      <MainInfo type="header"/>
 
       <Menu v-model="isMenuOpen"/>
     </div>
@@ -44,10 +21,11 @@
 
 <script>
   import Menu from  '@/components/Menu'
+  import MainInfo from  '@/components/MainInfo'
 
   export default {
     name: "Header",
-    components: {Menu},
+    components: {Menu, MainInfo},
     data() {
       return {
         isMenuOpen: false
