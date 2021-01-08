@@ -2,31 +2,31 @@
   {
     "icon": "<i class=\"far fa-file-code\"></i>",
     "title": "HTML5, CSS3",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+    "text": "Deep knowledge. 5 years experience with HTML5/CSS3 and libraries like Bootstrap4, Material and etc (Bulma, Tailwind). Also, worked with templating languages like Blade(with Laravel), Pug(Jade), Nunjucks."
   },
   {
     "icon": "<i class=\"fab fa-js-square\"></i>",
     "title": "JavaScript",
-    "text": "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu"
+    "text": "Medium knowledge. 4 years of experience. Working with native JS, ES6 syntax, TypeScript and frameworks (VueJS, React)."
   },
   {
     "icon": "<i class=\"fab fa-react\"></i>",
     "title": "React",
-    "text": "laboris nisi ut aliquip ex ea commodo consequat. In reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+    "text": "Basic knowledge. 1 year experience. Working with React using all basic features like JSX, Functional Components, Hooks, Router, Hight Order Components. Also, have experience of using Redux and Next framework."
   },
   {
     "icon": "<i class=\"fab fa-vuejs\"></i>",
     "title": "Vue",
-    "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "text": "Medium knowledge. 2 years of experience. I use the Vue framework and Nuxt for projects of any complexity."
   },
   {
     "icon": "<i class=\"fab fa-node-js\"></i>",
-    "title": "NodeJS",
-    "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+    "title": "Back-end",
+    "text": "I have some experience with PHP and NodeJS on the back-end side. For projects on PHP I may use the Laravel framework with Vue or React. On JS back-end I may work with MEVN/MERN stack, Express, Socket.io, SignalR, WebRTC, OpenTok."
   },
   {
     "icon": "<i class=\"fas fa-briefcase\"></i>",
     "title": "Additional",
-    "text": "Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+    "text": "For work I had to use such tools and technologies as: <ul> <li>Gatsby with React;</li> <li>Developer chats and ticket managers (Slack, Discord, Trello, Assembla, Asana, Jira);</li> <li>Git (Github, Gitlab, Bitbucket);</li> <li>Design tools (Zeplin, Figma, Avocode);</li> <li>Storybook/Storyblock</li></ul>"
   }
 ]

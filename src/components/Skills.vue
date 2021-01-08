@@ -2,6 +2,7 @@
   <div class="skills-container">
     <div class="skills">
       <div class="skill"
+           :class="{'skill--additional': skill.title === 'Additional'}"
            :id="`skill-${i}`"
            v-for="(skill, i) in skills" :key="skill.title"
       >
@@ -12,9 +13,7 @@
         </div>
 
         <div class="skill__text">
-          <p>
-            {{ skill.text }}
-          </p>
+          <div v-html="skill.text"></div>
         </div>
       </div>
     </div>

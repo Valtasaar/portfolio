@@ -44,14 +44,27 @@
 
     &__text {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 26px;
         color: @white;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.7px;
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
     }
 
     &.is-visible {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    &--additional {
+        .skill {
+            &__text {
+                text-align: left;
+            }
+        }
     }
 }
 
