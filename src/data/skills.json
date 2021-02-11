@@ -22,7 +22,7 @@
   {
     "icon": "<i class=\"fab fa-node-js\"></i>",
     "title": "Back-end",
-    "text": "I have some experience with PHP and NodeJS on the back-end side. For projects on PHP I may use the Laravel framework with Vue or React. On JS back-end I may work with MEVN/MERN stack, Express, Socket.io, SignalR, WebRTC, OpenTok."
+    "text": "I have some experience with PHP and NodeJS on the back-end side. For projects on PHP I may use the Laravel framework with Vue or React. On JS back-end I may work with MEVN/MERN stack, Express, WebSocket, Socket.io, SignalR, WebRTC, OpenTok."
   },
   {
     "icon": "<i class=\"fas fa-briefcase\"></i>",

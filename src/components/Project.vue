@@ -2,8 +2,10 @@
   <div class="project"
        :class="{'is-active': isActive, 'is-visible': isVisible}"
        :id="id"
+       tabindex="0"
        @mouseenter.prevent="isActive = true"
        @mouseleave.prevent="isActive = false"
+       @click.self.prevent="isActive = true"
   >
     <div class="project__image">
       <img :src="data.img" alt="google">

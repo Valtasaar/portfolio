@@ -39,9 +39,10 @@
             <span>Also, you can find me on social:</span>
 
             <ul>
-              <li><a class="link link--white" href="#" title="fb">Facebook</a></li>
-              <li><a class="link link--white" href="#" title="tw">Twitter</a></li>
-              <li><a class="link link--white" href="#" title="vk">VK</a></li>
+              <li><a class="link link--white" href="https://www.linkedin.com/in/daniil-kirienko-911563203" title="linked" target="_blank">Linkedin</a></li>
+              <li><a class="link link--white" href="https://www.facebook.com/d.valtasaar" title="fb" target="_blank">Facebook</a></li>
+              <li><a class="link link--white" href="https://twitter.com/DValtasaar" title="tw" target="_blank">Twitter</a></li>
+              <li><a class="link link--white" href="https://vk.com/id70376653" title="vk" target="_blank">VK</a></li>
             </ul>
           </div>
         </div>

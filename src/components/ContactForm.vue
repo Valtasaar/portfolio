@@ -124,7 +124,7 @@
       async sendForm() {
         this.isLoading = true
 
-        axios.post('http://localhost:5000/mail', {name: this.name, email: this.email, text: this.text})
+        axios.post(`${process.env.VUE_APP_URL}/mail`, {name: this.name, email: this.email, text: this.text})
           .then(() => {
             this.isSuccess = true
             this.isFailed = false

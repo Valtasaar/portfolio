@@ -20,9 +20,10 @@
     </ul>
 
     <div class="header__social">
-      <span><a href="#" title="vkontakte"><i class="fab fa-vk"></i></a></span>
-      <span><a href="#" title="facebook"><i class="fab fa-facebook-square"></i></a></span>
-      <span><a href="#" title="twitter"><i class="fab fa-twitter-square"></i></a></span>
+      <span><a href="https://www.linkedin.com/in/daniil-kirienko-911563203" title="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></span>
+      <span><a href="https://www.facebook.com/d.valtasaar" title="facebook" target="_blank"><i class="fab fa-facebook-square"></i></a></span>
+      <span><a href="https://twitter.com/DValtasaar" title="twitter" target="_blank"><i class="fab fa-twitter-square"></i></a></span>
+      <span><a href="https://vk.com/id70376653" title="vkontakte" target="_blank"><i class="fab fa-vk"></i></a></span>
     </div>
   </div>
 </template>
