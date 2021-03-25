@@ -3,7 +3,7 @@
     <div class="content-section">
       <div class="content-section__wrap">
         <div class="content-section__title">
-          <h2>Some of my non-confidential projects</h2>
+          <h2>Some of my projects</h2>
         </div>
 
         <Projects/>

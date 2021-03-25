@@ -1,15 +1,21 @@
 [
   {
-    "title": "Calendar module for Ohtapark resort",
+    "title": "Ohtapark resort",
     "img": "/images/projects/ohtapark.jpg",
     "tags": ["Vue 3"],
-    "link": "https://ohtapark.ru/news/#googtrans(en)"
+    "link": "https://ohtapark.ru/#googtrans(en)"
   },
   {
     "title": "Pension calculator",
     "img": "/images/projects/alfa-capital.jpg",
     "tags": ["React", "Next"],
     "link": "https://onablizko.ru"
+  },
+  {
+    "title": "Municipal system",
+    "img": "/images/projects/municipal.jpg",
+    "tags": ["VueJS"],
+    "link": "https://mosmolninskoe.spb.ru/"
   },
   {
     "title": "Savvin residential complex",
@@ -20,13 +26,13 @@
   {
     "title": "Sport events",
     "img": "/images/projects/turbostarts.jpg",
-    "tags": ["Native JS", "Stylus"],
+    "tags": ["Vanilla JS"],
     "link": "https://турбостарты.рф"
   },
   {
     "title": "Сonstruction company",
     "img": "/images/projects/gost-remont.jpg",
-    "tags": [],
+    "tags": ["Wordpress"],
     "link": "https://gost-remont.ru"
   }
 ]
