@@ -3,7 +3,7 @@
     "title": "Ohtapark resort",
     "img": "/images/projects/ohtapark.jpg",
     "tags": ["Vue 3"],
-    "link": "https://ohtapark.ru/#googtrans(en)"
+    "link": "https://ohtapark.ru/"
   },
   {
     "title": "Pension calculator",
@@ -12,10 +12,16 @@
     "link": "https://onablizko.ru"
   },
   {
+      "title": "CRM system for beauty saloons",
+      "img": "/images/projects/sonline.jpg",
+      "tags": ["React", "Redux"],
+      "link": "https://sonline.su/"
+    },
+  {
     "title": "Municipal system",
     "img": "/images/projects/municipal.jpg",
-    "tags": ["VueJS"],
-    "link": "https://mosmolninskoe.spb.ru/"
+    "tags": ["VueJS", "Nuxt", "Vuex"],
+    "link": "https://mokolpino.spb.ru/"
   },
   {
     "title": "Savvin residential complex",
@@ -26,13 +32,7 @@
   {
     "title": "Sport events",
     "img": "/images/projects/turbostarts.jpg",
-    "tags": ["Vanilla JS"],
+    "tags": [],
     "link": "https://турбостарты.рф"
-  },
-  {
-    "title": "Сonstruction company",
-    "img": "/images/projects/gost-remont.jpg",
-    "tags": ["Wordpress"],
-    "link": "https://gost-remont.ru"
   }
 ]

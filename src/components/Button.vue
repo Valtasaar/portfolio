@@ -1,5 +1,22 @@
 <template>
-  <button class="button"
+  <a v-if="link"
+     :href="href"
+     class="button"
+     :class="{
+            'button--transparent': transparent,
+            'button--small': small,
+            'button--medium': medium,
+            'button--yellow-border': yellowBorder,
+            'button--white-border': whiteBorder,
+            'button--form': form,
+          }"
+     target="_blank"
+  >
+    <slot></slot>
+  </a>
+
+  <button v-else
+          class="button"
           :disabled="disabled"
           :class="{
             'button--transparent': transparent,
@@ -10,8 +27,7 @@
             'button--form': form,
           }"
   >
-    <a v-if="link" :href="href" target="_blank"><slot></slot></a>
-    <span v-else><slot></slot></span>
+    <span><slot></slot></span>
   </button>
 </template>
 
