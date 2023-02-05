@@ -30,7 +30,9 @@
             form
             :disabled="isError || isLoading"
             @click.prevent="submit"
-    >Send</Button>
+    >
+      {{ isLoading ? 'Sending...' : 'Send' }}
+    </Button>
 
     <div class="form__info form__info--error" v-if="isError">
       <span>Something went wrong! Please check all fields</span>
@@ -47,110 +49,119 @@
 </template>
 
 <script>
-  import Input from '@/components/Input'
-  import Textarea from '@/components/Textarea'
-  import Button from '@/components/Button'
-  import { required, email } from '@vuelidate/validators'
-  import axios from 'axios'
+import Input from '@/components/Input'
+import Textarea from '@/components/Textarea'
+import Button from '@/components/Button'
+import { required, email } from '@vuelidate/validators'
+import axios from 'axios'
 
-  export default {
-    name: "ContactForm",
-    components: {Input, Textarea, Button},
-    data() {
-      return {
+export default {
+  name: "ContactForm",
+  components: { Input, Textarea, Button },
+  data() {
+    return {
+      name: '',
+      email: '',
+      text: '',
+      errors: {
         name: '',
         email: '',
-        text: '',
-        errors: {
-          name: '',
-          email: '',
-          text: ''
-        },
-        isSuccess: false,
-        isFailed: false,
-        isLoading: false,
-        failedText: ''
+        text: ''
+      },
+      isSuccess: false,
+      isFailed: false,
+      isLoading: false,
+      failedText: ''
+    }
+  },
+  methods: {
+    nameUpdate(value) {
+      this.name = value
+      this.$v.name.$touch()
+
+      if ( this.$v.name.$error ) {
+        this.errors.name = this.$v.name.$errors[0].$message
+      } else {
+        this.errors.name = ''
+      }
+
+      this.isSuccess = false
+      this.isFailed = false
+    },
+    emailUpdate(value) {
+      this.email = value
+      this.$v.email.$touch()
+
+      if ( this.$v.email.$error ) {
+        this.errors.email = this.$v.email.$errors[0].$message
+      } else {
+        this.errors.email = ''
+      }
+
+      this.isSuccess = false
+      this.isFailed = false
+    },
+    textUpdate(value) {
+      this.text = value
+      this.$v.text.$touch()
+
+      if ( this.$v.text.$error ) {
+        this.errors.text = this.$v.text.$errors[0].$message
+      } else {
+        this.errors.text = ''
+      }
+
+      this.isSuccess = false
+      this.isFailed = false
+    },
+    submit() {
+      this.nameUpdate(this.name)
+      this.emailUpdate(this.email)
+      this.textUpdate(this.text)
+
+      if ( !this.isError ) {
+        this.sendForm()
       }
     },
-    methods: {
-      nameUpdate(value) {
-        this.name = value
-        this.$v.name.$touch()
+    async sendForm() {
+      this.isLoading = true
 
-        if ( this.$v.name.$error ) {
-          this.errors.name = this.$v.name.$errors[0].$message
-        } else {
-          this.errors.name = ''
-        }
-
-        this.isSuccess = false
-        this.isFailed = false
-      },
-      emailUpdate(value) {
-        this.email = value
-        this.$v.email.$touch()
-
-        if ( this.$v.email.$error ) {
-          this.errors.email = this.$v.email.$errors[0].$message
-        } else {
-          this.errors.email = ''
-        }
-
-        this.isSuccess = false
-        this.isFailed = false
-      },
-      textUpdate(value) {
-        this.text = value
-        this.$v.text.$touch()
-
-        if ( this.$v.text.$error ) {
-          this.errors.text = this.$v.text.$errors[0].$message
-        } else {
-          this.errors.text = ''
-        }
-
-        this.isSuccess = false
-        this.isFailed = false
-      },
-      submit() {
-        this.nameUpdate(this.name)
-        this.emailUpdate(this.email)
-        this.textUpdate(this.text)
-
-        if ( !this.isError ) {
-          this.sendForm()
-        }
-      },
-      async sendForm() {
-        this.isLoading = true
-
-        axios.post(`${process.env.VUE_APP_URL}/mail`, {name: this.name, email: this.email, text: this.text})
-          .then(() => {
-            this.isSuccess = true
-            this.isFailed = false
+      axios.post(`${process.env.VUE_APP_API_URL}/send-mail`,
+          { name: this.name, email: this.email, text: this.text }
+      )
+          .then((res) => {
+            if ( res.data.status ) {
+              this.isSuccess = true
+              this.isFailed = false
+            } else {
+              this.isSuccess = false
+              this.isFailed = true
+              this.failedText = 'Something went wrong. Please, try later.'
+              console.error(res.data.error)
+            }
           })
           .catch(error => {
-            console.error(error);
-            this.failedText = error.message
+            console.error(error)
+            this.failedText = 'Something went wrong. Please, try later.'
             this.isSuccess = false
             this.isFailed = true
           })
           .finally(() => {
             this.isLoading = false
           })
-      }
-    },
-    computed: {
-      isError() {
-        return this.$v.$invalid;
-      }
-    },
-    validations () {
-      return {
-        name: {required},
-        text: {required},
-        email: {required, email}
-      }
+    }
+  },
+  computed: {
+    isError() {
+      return this.$v.$invalid;
+    }
+  },
+  validations() {
+    return {
+      name: { required },
+      text: { required },
+      email: { required, email }
     }
   }
+}
 </script>
