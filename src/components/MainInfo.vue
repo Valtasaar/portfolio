@@ -19,11 +19,22 @@
       </li>
     </ul>
 
-    <div class="header__social">
-      <span><a href="https://www.linkedin.com/in/daniil-kirienko-911563203" title="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></span>
-      <span><a href="https://www.facebook.com/d.valtasaar" title="facebook" target="_blank"><i class="fab fa-facebook-square"></i></a></span>
-      <span><a href="https://twitter.com/DValtasaar" title="twitter" target="_blank"><i class="fab fa-twitter-square"></i></a></span>
-      <span><a href="https://vk.com/id70376653" title="vkontakte" target="_blank"><i class="fab fa-vk"></i></a></span>
+    <div class="header__bottom">
+      <div class="header__social">
+        <span><a href="https://www.linkedin.com/in/daniil-kirienko-911563203" title="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></span>
+        <span><a href="https://www.facebook.com/d.valtasaar" title="facebook" target="_blank"><i class="fab fa-facebook-square"></i></a></span>
+        <span><a href="https://twitter.com/DValtasaar" title="twitter" target="_blank"><i class="fab fa-twitter-square"></i></a></span>
+        <span><a href="https://vk.com/id70376653" title="vkontakte" target="_blank"><i class="fab fa-vk"></i></a></span>
+      </div>
+
+      <div class="header__lang">
+        <a href="#" @click="isLangOpen = !isLangOpen">English</a>
+
+        <ul :class="{'isOpen': isLangOpen}">
+          <li><a href="#" @click="isLangOpen = !isLangOpen">English</a></li>
+          <li><a href="#" @click="isLangOpen = !isLangOpen">Русский</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +44,11 @@
     name: "MainInfo",
     props: {
       type: String
+    },
+    data() {
+      return {
+        isLangOpen: false
+      }
     }
   }
 </script>
