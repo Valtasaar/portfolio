@@ -1,17 +1,17 @@
 <template>
   <div class="menu" :class="{'is-active': modelValue}">
-    <MainInfo/>
+    <MainInfo />
   </div>
 </template>
 
 <script>
-  import MainInfo from  '@/components/MainInfo'
+import MainInfo from '@/components/MainInfo'
 
-  export default {
-    name: "Menu",
-    components: {MainInfo},
-    props: {
-      modelValue: Boolean
-    }
+export default {
+  name: 'Menu',
+  components: { MainInfo },
+  props: {
+    modelValue: Boolean
   }
+}
 </script>

@@ -8,29 +8,27 @@
               :placeholder="placeholder"
               :disabled="disabled"
               @input="$emit('update', $event.target.value)"
-    ></textarea>
+    />
 
     <span class="error">{{ error }}</span>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Textarea",
-    emits: ['update'],
-    props: {
-      title: String,
-      placeholder: String,
-      error: String,
-      name: String,
-      disabled: Boolean
-    },
-    data() {
-      return {
-        id: 'textarea-' + this.$.uid
-      }
-    },
-    created () {
+export default {
+  name: 'Textarea',
+  props: {
+    title: String,
+    placeholder: String,
+    error: String,
+    name: String,
+    disabled: Boolean
+  },
+  emits: ['update'],
+  data() {
+    return {
+      id: 'textarea-' + this.$.uid
     }
   }
+}
 </script>

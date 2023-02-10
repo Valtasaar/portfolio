@@ -6,7 +6,7 @@
           <h2>Some of my projects</h2>
         </div>
 
-        <Projects/>
+        <Projects />
       </div>
     </div>
 
@@ -20,7 +20,7 @@
           </div>
         </div>
 
-        <Skills/>
+        <Skills />
       </div>
     </div>
 
@@ -39,16 +39,50 @@
             <span>Also, you can find me on social:</span>
 
             <ul>
-              <li><a class="link link--white" href="https://www.linkedin.com/in/daniil-kirienko-911563203" title="linked" target="_blank">Linkedin</a></li>
-              <li><a class="link link--white" href="https://www.facebook.com/d.valtasaar" title="fb" target="_blank">Facebook</a></li>
-              <li><a class="link link--white" href="https://twitter.com/DValtasaar" title="tw" target="_blank">Twitter</a></li>
-              <li><a class="link link--white" href="https://vk.com/id70376653" title="vk" target="_blank">VK</a></li>
+              <li>
+                <a class="link link--white"
+                   href="https://www.linkedin.com/in/daniil-kirienko-911563203"
+                   title="linked"
+                   target="_blank"
+                >
+                  Linkedin
+                </a>
+              </li>
+
+              <li>
+                <a class="link link--white"
+                   href="https://www.facebook.com/d.valtasaar"
+                   title="fb"
+                   target="_blank"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a class="link link--white"
+                   href="https://twitter.com/DValtasaar"
+                   title="tw"
+                   target="_blank"
+                >
+                  Twitter
+                </a>
+              </li>
+
+              <li>
+                <a class="link link--white"
+                   href="https://vk.com/id70376653"
+                   title="vk"
+                   target="_blank"
+                >
+                  VK
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="content-section__col">
-          <ContactForm/>
+          <ContactForm />
         </div>
       </div>
     </div>
@@ -56,26 +90,26 @@
 </template>
 
 <script>
-  import Projects from '@/components/Projects'
-  import Skills from '@/components/Skills'
-  import ContactForm from '@/components/ContactForm'
-  import ScrollMagic from 'scrollmagic'
+import Projects from '@/components/Projects'
+import Skills from '@/components/Skills'
+import ContactForm from '@/components/ContactForm'
+import ScrollMagic from 'scrollmagic'
 
-  export default {
-    name: "MainContent",
-    components: {Projects, Skills, ContactForm},
-    mounted() {
-      if ( document.getElementById('form-section') ) {
-        const controller = new ScrollMagic.Controller();
+export default {
+  name: 'MainContent',
+  components: { Projects, Skills, ContactForm },
+  mounted() {
+    if ( document.getElementById('form-section') ) {
+      const controller = new ScrollMagic.Controller()
 
-        new ScrollMagic.Scene({
-          triggerElement: document.getElementById('form-section')
-        })
-          .setClassToggle(document.getElementById('form-section'), "is-visible")
-          .triggerHook(1)
-          .offset(200)
-          .addTo(controller)
-      }
+      new ScrollMagic.Scene({
+        triggerElement: document.getElementById('form-section')
+      })
+        .setClassToggle(document.getElementById('form-section'), 'is-visible')
+        .triggerHook(1)
+        .offset(200)
+        .addTo(controller)
     }
   }
+}
 </script>

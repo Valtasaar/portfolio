@@ -15,24 +15,24 @@
 </template>
 
 <script>
-  export default {
-    name: "Input",
-    emits: ['update'],
-    props: {
-      type: {
-        type: String,
-        default: 'text'
-      },
-      title: String,
-      placeholder: String,
-      name: String,
-      error: String,
-      disabled: Boolean
+export default {
+  name: 'Input',
+  props: {
+    type: {
+      type: String,
+      default: 'text'
     },
-    data() {
-      return {
-        id: 'input-' + this.$.uid
-      }
+    title: String,
+    placeholder: String,
+    name: String,
+    error: String,
+    disabled: Boolean
+  },
+  emits: ['update'],
+  data() {
+    return {
+      id: 'input-' + this.$.uid
     }
   }
+}
 </script>

@@ -56,7 +56,7 @@ import { required, email } from '@vuelidate/validators'
 import axios from 'axios'
 
 export default {
-  name: "ContactForm",
+  name: 'ContactForm',
   components: { Input, Textarea, Button },
   data() {
     return {
@@ -72,6 +72,11 @@ export default {
       isFailed: false,
       isLoading: false,
       failedText: ''
+    }
+  },
+  computed: {
+    isError() {
+      return this.$v.$invalid
     }
   },
   methods: {
@@ -126,34 +131,30 @@ export default {
     async sendForm() {
       this.isLoading = true
 
-      axios.post(`${process.env.VUE_APP_API_URL}/send-mail`,
+      axios.post(
+          `${process.env.VUE_APP_API_URL}/send-mail`,
           { name: this.name, email: this.email, text: this.text }
       )
-          .then((res) => {
-            if ( res.data.status ) {
-              this.isSuccess = true
-              this.isFailed = false
-            } else {
-              this.isSuccess = false
-              this.isFailed = true
-              this.failedText = 'Something went wrong. Please, try later.'
-              console.error(res.data.error)
-            }
-          })
-          .catch(error => {
-            console.error(error)
-            this.failedText = 'Something went wrong. Please, try later.'
-            this.isSuccess = false
-            this.isFailed = true
-          })
-          .finally(() => {
-            this.isLoading = false
-          })
-    }
-  },
-  computed: {
-    isError() {
-      return this.$v.$invalid;
+      .then((res) => {
+        if ( res.data.status ) {
+          this.isSuccess = true
+          this.isFailed = false
+        } else {
+          this.isSuccess = false
+          this.isFailed = true
+          this.failedText = 'Something went wrong. Please, try later.'
+          console.error(res.data.error)
+        }
+      })
+      .catch(error => {
+        console.error(error)
+        this.failedText = 'Something went wrong. Please, try later.'
+        this.isSuccess = false
+        this.isFailed = true
+      })
+      .finally(() => {
+        this.isLoading = false
+      })
     }
   },
   validations() {

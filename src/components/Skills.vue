@@ -27,33 +27,33 @@
 </template>
 
 <script>
-  import skills from '../data/skills'
-  import CircleChart from './CircleChart'
-  import ScrollMagic from 'scrollmagic'
+import skills from '../data/skills'
+import CircleChart from './CircleChart'
+import ScrollMagic from 'scrollmagic'
 
-  export default {
-    name: "Skills",
-    components: {CircleChart},
-    data() {
-      return {
-        skills: skills,
-        id: 'skill-' + this.$.uid
-      }
-    },
-    mounted() {
-      if (this.skills.length) {
-        const controller = new ScrollMagic.Controller();
+export default {
+  name: 'Skills',
+  components: { CircleChart },
+  data() {
+    return {
+      skills: skills,
+      id: 'skill-' + this.$.uid
+    }
+  },
+  mounted() {
+    if ( this.skills.length ) {
+      const controller = new ScrollMagic.Controller();
 
-        for (let i = 0; i < this.skills.length; i++) {
-          new ScrollMagic.Scene({
-            triggerElement: document.getElementById(`skill-${i}`)
-          })
+      for ( let i = 0; i < this.skills.length; i++ ) {
+        new ScrollMagic.Scene({
+          triggerElement: document.getElementById(`skill-${i}`)
+        })
             .setClassToggle(document.getElementById(`skill-${i}`), "is-visible")
             .triggerHook(1)
             .offset(50)
             .addTo(controller)
-        }
       }
     }
   }
+}
 </script>

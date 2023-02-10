@@ -1,14 +1,10 @@
-<template>
-  <MainLayout></MainLayout>
-</template>
-
-<script>
+<script setup>
 import MainLayout from './views/Main'
+import { provide } from 'vue'
 
-export default {
-  name: 'App',
-  components: {
-    MainLayout
-  }
-}
+provide('message', 'hello!')
 </script>
+
+<template>
+  <MainLayout />
+</template>
