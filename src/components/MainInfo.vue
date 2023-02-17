@@ -1,7 +1,15 @@
 <script setup>
+import { inject } from 'vue'
+
 defineProps({
   type: String
 })
+
+const { lang, setLang } = inject('lang')
+
+function changeLang() {
+  lang.value === 'en' ? setLang('ru') : setLang('en')
+}
 </script>
 
 <template>
@@ -50,12 +58,12 @@ defineProps({
             <i class="fab fa-vk"></i>
           </a>
         </span>
+      </div>
 
-<!--        <div class="header__lang">
-          <a href="#" @click.prevent="lang === 'en' ? lang = 'ru' : lang = 'en'">
-            {{ lang.value === 'en' ? 'Русский' : 'English' }}
-          </a>
-        </div>-->
+      <div class="header__lang">
+        <a href="#" @click.prevent="changeLang">
+          {{ lang === 'en' ? 'Русский' : 'English' }}
+        </a>
       </div>
     </div>
   </div>
