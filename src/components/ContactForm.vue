@@ -1,6 +1,6 @@
 <script setup>
 import axios from 'axios'
-import { computed, reactive } from 'vue'
+import { computed, nextTick, reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 import Input from '@/components/Input'
@@ -19,74 +19,43 @@ const data = reactive({
   failedText: 'Something went wrong. Please, try later.'
 })
 const fields = reactive({
-  name: 'asd',
-  email: '',
-  text: ''
+  form: {
+    name: '',
+    email: '',
+    text: ''
+  }
 })
 const isError = computed(() => v$ ? ( v$.$invalid && v$.$dirty ) : false)
 const rules = {
   form: {
     name: { required },
-    text: { required },
-    email: { required, email }
+    email: { required, email },
+    text: { required }
   }
 }
 const v$ = useVuelidate(rules, fields).value.form
 
-function nameUpdate(value) {
-  console.log(value)
-  fields.name = value
-  v$.name.$touch()
+function fieldUpdate(name, value) {
+  fields.form[name] = value
+  v$[name].$touch()
 
-  if ( v$.name.$error ) {
-    data.errors.name = v$.name.$errors[0].$message
-  } else {
-    data.errors.name = ''
-  }
+  if ( v$[name].$error )
+    data.errors[name] = v$[name].$errors[0].$message
+  else
+    data.errors[name] = ''
 
   data.isSuccess = false
   data.isFailed = false
 }
 
-function emailUpdate(value) {
-  fields.email = value
-  v$.email.$touch()
+async function submit() {
+  Object.keys(fields.form).forEach((key) => {
+    fieldUpdate(key, fields.form[key])
+  })
 
-  if ( v$.email.$error ) {
-    data.errors.email = v$.email.$errors[0].$message
-  } else {
-    data.errors.email = ''
-  }
-
-  data.isSuccess = false
-  data.isFailed = false
-}
-
-function textUpdate(value) {
-  fields.text = value
-  v$.text.$touch()
-
-  if ( v$.text.$error ) {
-    data.errors.text = v$.text.$errors[0].$message
-  } else {
-    data.errors.text = ''
-  }
-
-  data.isSuccess = false
-  data.isFailed = false
-}
-
-function submit() {
-  /* nameUpdate(data.name)
-  emailUpdate(data.email)
-  textUpdate(data.text) */
-  v$.$touch()
-  v$.$validate()
-  console.log(v$.$dirty)
-
-  /* if ( !isError.value && v$.$dirty ) {
+  if ( !isError.value ) {
     sendForm()
-  } */
+  }
 }
 
 async function sendForm() {
@@ -94,7 +63,7 @@ async function sendForm() {
 
   axios.post(
       `${process.env.VUE_APP_API_URL}/send-mail`,
-      { name: data.name, email: data.email, text: data.text }
+      { name: fields.form.name, email: fields.form.email, text: fields.form.text }
   )
   .then((res) => {
     if ( res.data.status ) {
@@ -119,7 +88,7 @@ async function sendForm() {
 
 <template>
   <div class="form">
-    <Input @update="nameUpdate"
+    <Input @update="(value) => fieldUpdate('name', value)"
            name="name"
            title="Name"
            placeholder="Enter your name"
@@ -127,7 +96,7 @@ async function sendForm() {
            :disabled="data.isLoading"
     />
 
-    <Input @update="emailUpdate"
+    <Input @update="(value) => fieldUpdate('email', value)"
            title="Email"
            type="email"
            placeholder="Enter your email"
@@ -135,7 +104,7 @@ async function sendForm() {
            :disabled="data.isLoading"
     />
 
-    <Textarea @update="textUpdate"
+    <Textarea @update="(value) => fieldUpdate('text', value)"
               title="Message"
               name="text"
               placeholder="Enter text"

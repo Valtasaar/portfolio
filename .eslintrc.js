@@ -25,6 +25,7 @@ module.exports = {
     'vue/max-attributes-per-line': 'off',
     'spaced-comment': 'off',
     'no-unused-vars': 'warn',
+    curly: 'off',
     indent: ['off', '2']
   }
 }
