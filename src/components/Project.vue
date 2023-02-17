@@ -1,78 +1,76 @@
+<script setup>
+import * as Vue from 'vue'
+import { onMounted, reactive } from 'vue'
+import ScrollMagic from 'scrollmagic'
+import Button from '@/components/Button'
+
+defineProps({
+  info: Object
+})
+
+const data = reactive({
+  isActive: false,
+  isVisible: false,
+  id: 'project-' + Vue.getCurrentInstance().uid
+})
+
+onMounted(() => {
+  if ( document.getElementById(data.id) ) {
+    const controller = new ScrollMagic.Controller()
+
+    const projectScene = new ScrollMagic.Scene({
+      triggerElement: document.getElementById(data.id)
+    })
+    .triggerHook(1)
+    .offset(50)
+    .addTo(controller)
+
+    projectScene.on('enter', () => {
+      data.isVisible = true
+    })
+
+    projectScene.on('leave', () => {
+      data.isVisible = false
+    })
+  }
+})
+</script>
+
 <template>
   <div class="project"
-       :class="{'is-active': isActive, 'is-visible': isVisible}"
-       :id="id"
+       :class="{'is-active': data.isActive, 'is-visible': data.isVisible}"
+       :id="data.id"
        tabindex="0"
-       @mouseenter.prevent="isActive = true"
-       @mouseleave.prevent="isActive = false"
-       @click.self.prevent="isActive = true"
+       @mouseenter.prevent="data.isActive = true"
+       @mouseleave.prevent="data.isActive = false"
+       @click.self.prevent="data.isActive = true"
   >
     <div class="project__image">
-      <img :src="data.img" alt="google">
+      <img :src="info.img" alt="google">
     </div>
 
     <div class="project__title">
-      <span>{{ data.title }}</span>
+      <span>{{ info.title }}</span>
     </div>
 
     <div class="project__tags">
-      <span v-for="(tag, i) in data.tags" :key="i">{{ tag }}</span>
+      <span v-for="(tag, i) in info.tags" :key="i">{{ tag }}</span>
     </div>
 
     <div class="project__buttons">
-      <Button transparent yellowBorder small link :href="data.link">
+      <Button transparent yellowBorder small link :href="info.link">
         Visit site
       </Button>
 
-      <Button v-if="data.git"
+      <Button v-if="info.git"
               transparent
               yellowBorder
               small
               link
-              :href="data.git"
+              :href="info.git"
       >
         Open github
       </Button>
     </div>
   </div>
 </template>
-
-<script>
-import Button from '@/components/Button'
-import ScrollMagic from 'scrollmagic'
-
-export default {
-  name: 'Project',
-  components: { Button },
-  props: {
-    data: Object
-  },
-  data() {
-    return {
-      isActive: false,
-      isVisible: false,
-      id: 'project-' + this.$.uid
-    }
-  },
-  mounted() {
-    if ( document.getElementById(this.id) ) {
-      const controller = new ScrollMagic.Controller()
-
-      const projectScene = new ScrollMagic.Scene({
-        triggerElement: document.getElementById(this.id)
-      })
-          .triggerHook(1)
-          .offset(50)
-          .addTo(controller)
-
-      projectScene.on('enter', () => {
-        this.isVisible = true
-      })
-
-      projectScene.on('leave', () => {
-        this.isVisible = false
-      })
-    }
-  }
-}
-</script>

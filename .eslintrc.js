@@ -24,6 +24,7 @@ module.exports = {
     'space-before-function-paren': 'off',
     'vue/max-attributes-per-line': 'off',
     'spaced-comment': 'off',
+    'no-unused-vars': 'warn',
     indent: ['off', '2']
   }
 }

@@ -1,8 +1,4 @@
 <script setup>
-//import { inject } from 'vue'
-
-//const message = inject('message')
-
 defineProps({
   type: String
 })
@@ -55,11 +51,11 @@ defineProps({
           </a>
         </span>
 
-        <div class="header__lang">
+<!--        <div class="header__lang">
           <a href="#" @click.prevent="lang === 'en' ? lang = 'ru' : lang = 'en'">
             {{ lang.value === 'en' ? 'Русский' : 'English' }}
           </a>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

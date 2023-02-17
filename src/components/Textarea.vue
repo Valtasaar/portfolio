@@ -1,9 +1,27 @@
+<script setup>
+import * as Vue from 'vue'
+import { reactive } from 'vue'
+
+defineProps({
+  title: String,
+  placeholder: String,
+  error: String,
+  name: String,
+  disabled: Boolean
+})
+defineEmits(['update'])
+
+const data = reactive({
+  id: 'textarea-' + Vue.getCurrentInstance().uid
+})
+</script>
+
 <template>
   <div class="field-block">
-    <label :for="id" v-if="title">{{ title }}</label>
+    <label :for="data.id" v-if="title">{{ title }}</label>
 
     <textarea class="textarea"
-              :id="id"
+              :id="data.id"
               :name="name"
               :placeholder="placeholder"
               :disabled="disabled"
@@ -13,22 +31,3 @@
     <span class="error">{{ error }}</span>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'Textarea',
-  props: {
-    title: String,
-    placeholder: String,
-    error: String,
-    name: String,
-    disabled: Boolean
-  },
-  emits: ['update'],
-  data() {
-    return {
-      id: 'textarea-' + this.$.uid
-    }
-  }
-}
-</script>

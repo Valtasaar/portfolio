@@ -1,3 +1,25 @@
+<script setup>
+import Projects from '@/components/Projects'
+import Skills from '@/components/Skills'
+import ContactForm from '@/components/ContactForm'
+import ScrollMagic from 'scrollmagic'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  if ( document.getElementById('form-section') ) {
+    const controller = new ScrollMagic.Controller()
+
+    new ScrollMagic.Scene({
+      triggerElement: document.getElementById('form-section')
+    })
+    .setClassToggle(document.getElementById('form-section'), 'is-visible')
+    .triggerHook(1)
+    .offset(200)
+    .addTo(controller)
+  }
+})
+</script>
+
 <template>
   <div class="content">
     <div class="content-section">
@@ -88,28 +110,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
-import ContactForm from '@/components/ContactForm'
-import ScrollMagic from 'scrollmagic'
-
-export default {
-  name: 'MainContent',
-  components: { Projects, Skills, ContactForm },
-  mounted() {
-    if ( document.getElementById('form-section') ) {
-      const controller = new ScrollMagic.Controller()
-
-      new ScrollMagic.Scene({
-        triggerElement: document.getElementById('form-section')
-      })
-        .setClassToggle(document.getElementById('form-section'), 'is-visible')
-        .triggerHook(1)
-        .offset(200)
-        .addTo(controller)
-    }
-  }
-}
-</script>
