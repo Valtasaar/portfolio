@@ -2,31 +2,49 @@
   {
     "icon": "<i class=\"far fa-file-code\"></i>",
     "title": "HTML5, CSS3",
-    "text": "Deep knowledge. 5 years experience with HTML5/CSS3 and libraries like Bootstrap4, Material and etc (Bulma, Tailwind). Also, worked with templating languages like Blade(with Laravel), Pug(Jade), Nunjucks."
+    "text": {
+      "en": "Deep knowledge. 5 years experience with HTML5/CSS3 and libraries like Bootstrap4, Material and etc (Bulma, Tailwind). Also, worked with templating languages like Blade(with Laravel), Pug(Jade), Nunjucks.",
+      "ru": "Продвинутые знания. 5 лет опыта с HTML5/CSS3 и различными библиотеками, такими как Bootstrap4, Material и пр. (Bulma, Tailwind). Так же работал с шаблонизаторами Blade(with Laravel), Pug(Jade), Nunjucks."
+    }
   },
   {
     "icon": "<i class=\"fab fa-js-square\"></i>",
     "title": "JavaScript",
-    "text": "Medium knowledge. 4 years of experience. Working with native JS, ES6 syntax, TypeScript and frameworks (VueJS, React)."
+    "text": {
+      "en": "Medium knowledge. 4 years of experience. Working with native JS, ES6 syntax, TypeScript and frameworks (VueJS, React).",
+      "ru": "Средние знания. 4 года опыта. Работал как с нативным JS, ES6 syntax, TypeScript, так и с фрейморками VueJS и React."
+    }
   },
   {
     "icon": "<i class=\"fab fa-react\"></i>",
     "title": "React",
-    "text": "Basic knowledge. 1 year experience. Working with React using all basic features like JSX, Functional Components, Hooks, Router. Also, have experience of using Redux and Next framework."
+    "text": {
+      "en": "Basic knowledge. 1 year experience. Working with React using all basic features like JSX, Functional Components, Hooks, Router. Also, have experience of using Redux and NextJS.",
+      "ru": "Базовые знания. 1 год опыта. Работал с React используя базовые возможности такие как JSX, Functional Components, Hooks, Router и пр. Так же имею опыт использования Redux и NextJS."
+    }
   },
   {
     "icon": "<i class=\"fab fa-vuejs\"></i>",
     "title": "Vue",
-    "text": "Medium knowledge. 2 years of experience. I use the Vue framework and Nuxt for projects of any complexity."
+    "text": {
+      "en": "Medium knowledge. 2 years of experience. I use the VueJS and NuxtJS for projects of any complexity.",
+      "ru": "Средние знания. 2 года опыта. Использовал VueJS и NuxtJS для проектов различной сложности."
+    }
   },
   {
     "icon": "<i class=\"fab fa-node-js\"></i>",
     "title": "Back-end",
-    "text": "I have some experience with PHP and NodeJS on the back-end side. For projects on PHP I may use the Laravel framework with Vue or React. On JS back-end I may work with MEVN/MERN stack, Express, WebSocket, Socket.io, SignalR, WebRTC, OpenTok."
+    "text": {
+      "en": "I have some experience with PHP and NodeJS on the back-end side. For projects on PHP I may use the Laravel framework with Vue or React. On JS back-end I may work with MEVN/MERN stack. Also, I have some experience with WebSocket, Socket.io, SignalR, WebRTC, OpenTok.",
+      "ru": "Имею небольшой опыт работы с PHP и NodeJS. Для пролетов на PHP использовал фрэйморк Laravel с Vue или React. На JS работал в стеке MEVN/MERN. Также имею небольшой опыт работы с WebSocket, Socket.io, SignalR, WebRTC, OpenTok."
+    }
   },
   {
     "icon": "<i class=\"fas fa-briefcase\"></i>",
     "title": "Additional",
-    "text": "For work I had to use such tools and technologies as: <ul> <li>Gatsby with React;</li> <li>Developer chats and ticket managers (Slack, Discord, Trello, Assembla, Asana, Jira);</li> <li>Git (Github, Gitlab, Bitbucket);</li> <li>Design tools (Zeplin, Figma, Avocode);</li> <li>Storybook/Storyblock</li></ul>"
+    "text": {
+      "en": "For work I had to use such tools and technologies as: <ul> <li>Gatsby with React;</li> <li>Developer chats and ticket managers (Slack, Discord, Trello, Assembla, Asana, Jira);</li> <li>Git (Github, Gitlab, Bitbucket);</li> <li>Design tools (Zeplin, Figma, Avocode, Photoshop, Adobe Illustrator);</li> <li>Storybook/Storyblock</li></ul>",
+      "ru": "Для работы я использую такие инструменты и технологии как: <ul> <li>Gatsby с React;</li> <li>Чаты разработчиков и таск менеджеры (Slack, Discord, Trello, Assembla, Asana, Jira);</li> <li>Git (Github, Gitlab, Bitbucket);</li> <li>Инструменты дизайна (Zeplin, Figma, Avocode, Photoshop, Adobe Illustrator);</li> <li>Storybook/Storyblock</li></ul>"
+    }
   }
 ]

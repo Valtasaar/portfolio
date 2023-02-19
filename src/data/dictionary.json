@@ -1,0 +1,56 @@
+{
+  "name": {
+    "en": "Daniil Kirienko",
+    "ru": "Кириенко Даниил"
+  },
+  "role": {
+    "en": "WEB Developer",
+    "ru": "Вэб Разработчик"
+  },
+  "projectsTitle": {
+    "en": "Some of my projects",
+    "ru": "Некоторые из моих проектов"
+  },
+  "skills": {
+    "en": "Skills & Experience",
+    "ru": "Навыки и опыт"
+  },
+  "contact": {
+    "en": "Contact with me",
+    "ru": "Связаться со мной"
+  },
+  "contactText": {
+    "en": "If you have any question or proposals, please fill the form.",
+    "ru": "Если у вас есть вопросы или предложения, заполните пожалуйста форму."
+  },
+  "contactSocial": {
+    "en": "Also, you can find me on social",
+    "ru": "Вы также можете найти меня в соц сетях"
+  },
+  "form": {
+    "name": {
+      "en": "Enter your name",
+      "ru": "Введите ваше имя"
+    },
+    "email": {
+      "en": "Enter your email",
+      "ru": "Введите ваш email"
+    },
+    "text": {
+      "en": "Enter text",
+      "ru": "Введите текст"
+    },
+    "error": {
+      "en": "Please, check all fields.",
+      "ru": "Пожалуйста, проверьте все поля"
+    },
+    "failed": {
+      "en": "Something went wrong! Please, try later.",
+      "ru": "Что-то пошло не так! Пожалуйста, попробуйте позже"
+    },
+    "success": {
+      "en": "Your message has been sent!",
+      "ru": "Ваше сообщение отправлено!"
+    }
+  }
+}

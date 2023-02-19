@@ -1,9 +1,18 @@
 <script setup>
+import dictionary from '../data/dictionary.json'
+import { computed, inject, onMounted } from 'vue'
+import ScrollMagic from 'scrollmagic'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
 import ContactForm from '@/components/ContactForm'
-import ScrollMagic from 'scrollmagic'
-import { onMounted } from 'vue'
+
+const { lang } = inject('lang')
+
+const projectsTitle = computed(() => lang.value === 'en' ? dictionary.projectsTitle.en : dictionary.projectsTitle.ru)
+const skillsTitle = computed(() => lang.value === 'en' ? dictionary.skills.en : dictionary.skills.ru)
+const contactTitle = computed(() => lang.value === 'en' ? dictionary.contact.en : dictionary.contact.ru)
+const contactText = computed(() => lang.value === 'en' ? dictionary.contactText.en : dictionary.contactText.ru)
+const contactSocial = computed(() => lang.value === 'en' ? dictionary.contactSocial.en : dictionary.contactSocial.ru)
 
 onMounted(() => {
   if ( document.getElementById('form-section') ) {
@@ -25,7 +34,7 @@ onMounted(() => {
     <div class="content-section">
       <div class="content-section__wrap">
         <div class="content-section__title">
-          <h2>Some of my projects</h2>
+          <h2>{{ projectsTitle }}</h2>
         </div>
 
         <Projects />
@@ -35,11 +44,7 @@ onMounted(() => {
     <div class="content-section">
       <div class="content-section__wrap">
         <div class="content-section__title">
-          <h2>Skills & Experience</h2>
-
-          <div class="content-section__subtitle">
-            <h3>Facts only :-)</h3>
-          </div>
+          <h2>{{ skillsTitle }}</h2>
         </div>
 
         <Skills />
@@ -50,15 +55,15 @@ onMounted(() => {
       <div class="content-section__wrap">
         <div class="content-section__col">
           <div class="content-section__title">
-            <h2>Contact with me</h2>
+            <h2>{{ contactTitle }}</h2>
 
             <div class="content-section__subtitle">
-              <h3>If you have any question or proposals, please fill the form.</h3>
+              <h3>{{ contactText }}</h3>
             </div>
           </div>
 
           <div class="content-section__text">
-            <span>Also, you can find me on social:</span>
+            <span>{{ contactSocial }}:</span>
 
             <ul>
               <li>

@@ -1,6 +1,6 @@
 <script setup>
 import * as Vue from 'vue'
-import { onMounted, reactive } from 'vue'
+import { inject, onMounted, reactive } from 'vue'
 import ScrollMagic from 'scrollmagic'
 import Button from '@/components/Button'
 
@@ -8,6 +8,7 @@ defineProps({
   info: Object
 })
 
+const { lang } = inject('lang')
 const data = reactive({
   isActive: false,
   isVisible: false,
@@ -50,7 +51,7 @@ onMounted(() => {
     </div>
 
     <div class="project__title">
-      <span>{{ info.title }}</span>
+      <span>{{ lang === 'en' ? info.title.en : info.title.ru }}</span>
     </div>
 
     <div class="project__tags">
@@ -59,7 +60,7 @@ onMounted(() => {
 
     <div class="project__buttons">
       <Button transparent yellowBorder small link :href="info.link">
-        Visit site
+        {{ lang === 'en' ? 'Visit site' : 'Посетить сайт' }}
       </Button>
 
       <Button v-if="info.git"

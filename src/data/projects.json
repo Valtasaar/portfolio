@@ -1,36 +1,54 @@
 [
   {
-    "title": "Ohtapark resort",
+    "title": {
+      "en": "Ohtapark resort",
+      "ru": "Горнолыжный курорт Охтапарк"
+    },
     "img": "/images/projects/ohtapark.jpg",
     "tags": ["Vue 3"],
     "link": "https://ohtapark.ru/"
   },
   {
-    "title": "Pension calculator",
+    "title": {
+      "en": "Pension calculator",
+      "ru": "Пенсионный калькулятор"
+    },
     "img": "/images/projects/alfa-capital.jpg",
     "tags": ["React", "Next"],
     "link": "https://onablizko.ru"
   },
   {
-      "title": "CRM system for beauty saloons",
+      "title": {
+        "en": "CRM system for beauty saloons",
+        "ru": "CRM система для салонов красоты"
+      },
       "img": "/images/projects/sonline.jpg",
       "tags": ["React", "Redux"],
       "link": "https://sonline.su/"
     },
   {
-    "title": "Municipal system",
+    "title": {
+      "en": "Municipal system",
+      "ru": "Система Муниципал"
+    },
     "img": "/images/projects/municipal.jpg",
     "tags": ["VueJS", "Nuxt", "Vuex"],
     "link": "https://mokolpino.spb.ru/"
   },
   {
-    "title": "Savvin residential complex",
+    "title": {
+      "en": "SAVVIN RIVER RESIDENCE",
+      "ru": "ЖК SAVVIN RIVER RESIDENCE"
+    },
     "img": "/images/projects/savvin.jpg",
     "tags": [],
     "link": "https://www.savvin.ru"
   },
   {
-    "title": "Sport events",
+    "title": {
+      "en": "Sport events",
+      "ru": "Спортивные соревнования"
+    },
     "img": "/images/projects/turbostarts.jpg",
     "tags": [],
     "link": "https://турбостарты.рф"

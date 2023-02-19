@@ -1,5 +1,6 @@
 <script setup>
 import { inject } from 'vue'
+import dictionary from '../data/dictionary.json'
 
 defineProps({
   type: String
@@ -18,13 +19,13 @@ function changeLang() {
   >
     <ul>
       <li>
-        <span>My name</span>
-        <span>Daniil Kirienko</span>
+        <span>{{ lang === 'en' ? 'My name' : 'Имя' }}</span>
+        <span>{{ lang === 'en' ? dictionary.name.en : dictionary.name.ru }}</span>
       </li>
 
       <li>
-        <span>Role</span>
-        <span>WEB Developer</span>
+        <span>{{ lang === 'en' ? 'Role' : 'Специализация' }}</span>
+        <span>{{ lang === 'en' ? dictionary.role.en : dictionary.role.ru }}</span>
       </li>
 
       <li>

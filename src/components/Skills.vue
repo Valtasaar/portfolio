@@ -1,9 +1,11 @@
 <script setup>
 import * as Vue from 'vue'
-import { onMounted, reactive } from 'vue'
+import { inject, onMounted, reactive } from 'vue'
 import ScrollMagic from 'scrollmagic'
 import skills from '../data/skills'
 import CircleChart from './CircleChart'
+
+const { lang } = inject('lang')
 
 const data = reactive({
   skills,
@@ -42,7 +44,7 @@ onMounted(() => {
         </div>
 
         <div class="skill__text">
-          <div v-html="skill.text" />
+          <div v-html="lang === 'en' ? skill.text.en : skill.text.ru" />
         </div>
       </div>
     </div>
