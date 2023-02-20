@@ -59,6 +59,12 @@ function changeLang() {
             <i class="fab fa-vk"></i>
           </a>
         </span>
+
+        <span>
+          <a href="https://t.me/daniilkirien" title="vkontakte" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </span>
       </div>
 
       <div class="header__lang">

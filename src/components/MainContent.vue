@@ -104,6 +104,16 @@ onMounted(() => {
                   VK
                 </a>
               </li>
+
+              <li>
+                <a class="link link--white"
+                   href="https://t.me/daniilkirien"
+                   title="tg"
+                   target="_blank"
+                >
+                  Telegram
+                </a>
+              </li>
             </ul>
           </div>
         </div>
