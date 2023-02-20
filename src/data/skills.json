@@ -3,32 +3,32 @@
     "icon": "<i class=\"far fa-file-code\"></i>",
     "title": "HTML5, CSS3",
     "text": {
-      "en": "Deep knowledge. 5 years experience with HTML5/CSS3 and libraries like Bootstrap4, Material and etc (Bulma, Tailwind). Also, worked with templating languages like Blade(with Laravel), Pug(Jade), Nunjucks.",
-      "ru": "Продвинутые знания. 5 лет опыта с HTML5/CSS3 и различными библиотеками, такими как Bootstrap4, Material и пр. (Bulma, Tailwind). Так же работал с шаблонизаторами Blade(with Laravel), Pug(Jade), Nunjucks."
+      "en": "Deep knowledge. {years} experience with HTML5/CSS3 and libraries like Bootstrap4, Material and etc (Bulma, Tailwind). Also, worked with templating languages like Blade(with Laravel), Pug(Jade), Nunjucks.",
+      "ru": "Продвинутые знания. {years} опыта с HTML5/CSS3 и различными библиотеками, такими как Bootstrap4, Material и пр. (Bulma, Tailwind). Так же работал с шаблонизаторами Blade(with Laravel), Pug(Jade), Nunjucks."
     }
   },
   {
     "icon": "<i class=\"fab fa-js-square\"></i>",
     "title": "JavaScript",
     "text": {
-      "en": "Medium knowledge. 4 years of experience. Working with native JS, ES6 syntax, TypeScript and frameworks (VueJS, React).",
-      "ru": "Средние знания. 4 года опыта. Работал как с нативным JS, ES6 syntax, TypeScript, так и с фрейморками VueJS и React."
+      "en": "Medium knowledge. {years} of experience. Working with native JS, ES6 syntax, TypeScript and frameworks (VueJS, React).",
+      "ru": "Средние знания. {years} опыта. Работал как с нативным JS, ES6 syntax, TypeScript, так и с фрейморками VueJS и React."
     }
   },
   {
     "icon": "<i class=\"fab fa-react\"></i>",
     "title": "React",
     "text": {
-      "en": "Basic knowledge. 1 year experience. Working with React using all basic features like JSX, Functional Components, Hooks, Router. Also, have experience of using Redux and NextJS.",
-      "ru": "Базовые знания. 1 год опыта. Работал с React используя базовые возможности такие как JSX, Functional Components, Hooks, Router и пр. Так же имею опыт использования Redux и NextJS."
+      "en": "Basic knowledge. {years} experience. Working with React using all basic features like JSX, Functional Components, Hooks, Router. Also, have experience of using Redux and NextJS.",
+      "ru": "Базовые знания. {years} опыта. Работал с React используя базовые возможности такие как JSX, Functional Components, Hooks, Router и пр. Так же имею опыт использования Redux и NextJS."
     }
   },
   {
     "icon": "<i class=\"fab fa-vuejs\"></i>",
     "title": "Vue",
     "text": {
-      "en": "Medium knowledge. 2 years of experience. I use the VueJS and NuxtJS for projects of any complexity.",
-      "ru": "Средние знания. 2 года опыта. Использовал VueJS и NuxtJS для проектов различной сложности."
+      "en": "Medium knowledge. {years} of experience. I use the VueJS and NuxtJS for projects of any complexity.",
+      "ru": "Средние знания. {years} опыта. Использовал VueJS и NuxtJS для проектов различной сложности."
     }
   },
   {
