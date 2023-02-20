@@ -1,21 +1,21 @@
 [
   {
     "title": {
+      "en": "Advertise platform",
+      "ru": "Рекламная платформа"
+    },
+    "img": "/images/projects/surfe.jpg",
+    "tags": ["React", "Next"],
+    "link": "https://surfe.be/"
+  },
+  {
+    "title": {
       "en": "Ohtapark resort",
       "ru": "Горнолыжный курорт Охтапарк"
     },
     "img": "/images/projects/ohtapark.jpg",
-    "tags": ["Vue 3"],
+    "tags": ["VueJS"],
     "link": "https://ohtapark.ru/"
-  },
-  {
-    "title": {
-      "en": "Pension calculator",
-      "ru": "Пенсионный калькулятор"
-    },
-    "img": "/images/projects/alfa-capital.jpg",
-    "tags": ["React", "Next"],
-    "link": "https://onablizko.ru"
   },
   {
       "title": {
@@ -32,8 +32,8 @@
       "ru": "Система Муниципал"
     },
     "img": "/images/projects/municipal.jpg",
-    "tags": ["VueJS", "Nuxt", "Vuex"],
-    "link": "https://mokolpino.spb.ru/"
+    "tags": ["VueJS", "Nuxt"],
+    "link": "https://mosmolninskoe.spb.ru/"
   },
   {
     "title": {
@@ -46,11 +46,20 @@
   },
   {
     "title": {
+      "en": "IT found",
+      "ru": "ИТ фонд"
+    },
+    "img": "/images/projects/ifreet.jpg",
+    "tags": [],
+    "link": "https://ifreet.ru/"
+  },
+  {
+    "title": {
       "en": "Sport events",
       "ru": "Спортивные соревнования"
     },
     "img": "/images/projects/turbostarts.jpg",
     "tags": [],
-    "link": "https://турбостарты.рф"
+    "link": "https://турбостарты.рф/"
   }
 ]
